@@ -46,6 +46,6 @@ mergedata <- mergedata %>%
   mutate(percent_longest = rowMeans(select(., starts_with("longest_")) %>% 
                                      mutate(across(everything(), ~case_when(. == 1 ~ 1, . == 0 ~ 0))), na.rm = TRUE) * 100)
 
-
+#add some text
 
 write.csv(mergedata, "Merged participant data for graphing, May 2023.csv")
